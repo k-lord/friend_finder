@@ -2,8 +2,8 @@ var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 
-var htmlRouter = require('./routes/index');
-var apiRouter = require('./routes/users');
+var htmlRouter = require('./routes/html');
+var apiRouter = require('./routes/api');
 
 var app = express();
 
