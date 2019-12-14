@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--JQuery-->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <!--Bootstrap CSS-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -14,16 +17,148 @@
 </head>
 
 <body>
-  <h1>Friend Finder</h1>
-  <p>survey page</p>
-  <a href="/">home link</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Friend Finder</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <!--JQuery-->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/api/friends">Friends API</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="k-lord.github.io/friend_finder">GitHub</a>
+        </li>
+    </div>
+  </nav>
+
+  <div class="container justify-content-center">
+    <form>
+      <div class="form-group">
+        <input type="text" class="form-control" id="userName" placeholder="Enter name">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="userPic" placeholder="Image Link Here">
+      </div>
+      <hr><br>
+      <div class="form-group survey">
+        <label for="q1">Question 1 Lorem ipsum dolor sit amet consectetur adipisicing elit.</label><br>
+        <span>Strongly Disgree
+          <input type="range" class="custom-range w-50" min="1" max="5" step="1" id="q1">
+          Strongly Agree</span><br><br>
+      </div>
+      <hr>
+      <div class="form-group survey">
+        <label for="q2">Question 2 Lorem ipsum dolor sit amet consectetur adipisicing elit.</label><br>
+        <span>Strongly Disgree
+          <input type="range" class="custom-range w-50" min="1" max="5" step="1" id="q2">
+          Strongly Agree</span><br><br>
+      </div>
+      <hr>
+      <div class="form-group survey">
+        <label for="q3">Question 3 Lorem ipsum dolor sit amet consectetur adipisicing elit.</label><br>
+        <span>Strongly Disgree
+          <input type="range" class="custom-range w-50" min="1" max="5" step="1" id="q3">
+          Strongly Agree</span><br><br>
+      </div>
+      <hr>
+      <div class="form-group survey">
+        <label for="q4">Question 4 Lorem ipsum dolor sit amet consectetur adipisicing elit.</label><br>
+        <span>Strongly Disgree
+          <input type="range" class="custom-range w-50" min="1" max="5" step="1" id="q4">
+          Strongly Agree</span><br><br>
+      </div>
+      <hr>
+      <div class="form-group survey">
+        <label for="q5">Question 5 Lorem ipsum dolor sit amet consectetur adipisicing elit.</label><br>
+        <span>Strongly Disgree
+          <input type="range" class="custom-range w-50" min="1" max="5" step="1" id="q5">
+          Strongly Agree</span><br><br>
+      </div>
+      <hr>
+      <div class="form-group survey">
+        <label for="q6">Question 6 Lorem ipsum dolor sit amet consectetur adipisicing elit.</label><br>
+        <span>Strongly Disgree
+          <input type="range" class="custom-range w-50" min="1" max="5" step="1" id="q6">
+          Strongly Agree</span><br><br>
+      </div>
+      <hr>
+      <div class="form-group survey">
+        <label for="q7">Question 7 Lorem ipsum dolor sit amet consectetur adipisicing elit.</label><br>
+        <span>Strongly Disgree
+          <input type="range" class="custom-range w-50" min="1" max="5" step="1" id="q7">
+          Strongly Agree</span><br><br>
+      </div>
+      <hr>
+      <div class="form-group survey">
+        <label for="q8">Question 8 Lorem ipsum dolor sit amet consectetur adipisicing elit.</label><br>
+        <span>Strongly Disgree
+          <input type="range" class="custom-range w-50" min="1" max="5" step="1" id="q8">
+          Strongly Agree</span><br><br>
+      </div>
+      <hr>
+      <div class="form-group survey">
+        <label for="q9">Question 9 Lorem ipsum dolor sit amet consectetur adipisicing elit.</label><br>
+        <span>Strongly Disgree
+          <input type="range" class="custom-range w-50" min="1" max="5" step="1" id="q9">
+          Strongly Agree</span><br><br>
+      </div>
+      <hr>
+      <div class="form-group survey">
+        <label for="q10">Question 10 Lorem ipsum dolor sit amet consectetur adipisicing elit.</label><br>
+        <span>Strongly Disgree
+          <input type="range" class="custom-range w-50" min="1" max="5" step="1" id="q10">
+          Strongly Agree</span><br><br>
+      </div>
+      <br><br>
+
+
+
+      <button type="submit" id="submit" class="btn btn-dark btn-block">Submit</button>
+    </form>
+  </div>
+
+  
+
+
   <!--Javascript logic-->
-  <script type="text/javascript">
+  <script>
+
+    $("#submit").on("click", function (event) {
+      event.preventDefault();
+
+      var newFriend = {
+        name: $("#userName").val().trim(),
+        image: $("#userPic").val().trim(),
+        results: [
+          parseInt($("#q1").val()),
+          parseInt($("#q2").val()),
+          parseInt($("#q3").val()),
+          parseInt($("#q4").val()),
+          parseInt($("#q5").val()),
+          parseInt($("#q6").val()),
+          parseInt($("#q7").val()),
+          parseInt($("#q8").val()),
+          parseInt($("#q9").val()),
+          parseInt($("#q10").val()),
+        ],
+        score: 0
+      };
+
+      for (var i = 0; i < newFriend.results.length; i++) {
+        newFriend.score += newFriend.results[i];
+      }
+
+      console.log(newFriend);
+    });
+
+
 
   </script>
 </body>
