@@ -1,5 +1,7 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("/images/gplaypattern.png");
+  color: #343940;
 }
 
 a {
@@ -8,7 +10,10 @@ a {
 
 .navbar {
   background-color: #e9ecef;
-  color: white;
+}
+
+#my-brand {
+  color: gray;
 }
 
 .jumbotron {
@@ -19,6 +24,12 @@ a {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+#header {
+  padding-top: 20px;
+  text-align: center;
+  margin: 0 auto 0 auto;
 }
 
 .container {
@@ -41,4 +52,13 @@ label {
 
 input[type=range]::-webkit-slider-thumb {
   background: slategrey;
+}
+
+.modal-body {
+  text-align: center;
+}
+
+#match-pic {
+  max-width: 300px;
+  max-height: 300px;
 }

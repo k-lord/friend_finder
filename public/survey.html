@@ -39,13 +39,18 @@
     </div>
   </nav>
 
+  <h2 id="header">Fill out the survey below to find someone just like you.</h2>
+
   <div class="container">
-    <form>
+    <form name="survey-form" class="needs-validation" method="POST" role="form">
       <div class="form-group">
-        <input type="text" class="form-control w-100" id="userName" placeholder="Enter name">
+        <input type="text" name="fname" class="form-control w-100" id="userName"
+          placeholder="What's your name? Enter it here." required>
+        <div class="invalid-feedback">Please tell us your name.</div>
       </div>
       <div class="form-group">
-        <input type="text" class="form-control w-100" id="userPic" placeholder="Image Link Here">
+        <input type="text" class="form-control w-100" id="userPic"
+          placeholder="Here is where you put a link to a picture of you.">
       </div>
       <hr><br>
       <div class="form-group survey">
@@ -119,17 +124,36 @@
       </div>
       <br><br>
 
-      <button type="submit" id="submit" class="btn btn-dark btn-block">Submit</button>
+      <button type="submit" id="submit" class="btn btn-dark btn-block" data-toggle="modal" data-target="#findmatch">FIND
+        YOUR MATCH</button>
     </form>
+  </div>
 
+  <!-- Modal -->
+  <div class="modal fade" id="findmatch" tabindex="-1" role="dialog" aria-labelledby="findmatchTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="findmatchTitle">You matched with...</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="modalMatch" class="modal-body">
+          <span id="match-name"></span><br>
+          <img id="match-pic" src="./images/person-placeholder-3.jpg">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
   </div>
 
 
-
-
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
@@ -137,9 +161,10 @@
 
   <!--Javascript logic-->
   <script>
-
+    //on click event to create new friend object and POST to API/friends
     $("#submit").on("click", function (event) {
       event.preventDefault();
+      validateForm();
 
       var newFriend = {
         name: $("#userName").val().trim(),
@@ -164,7 +189,24 @@
       }
 
       console.log(newFriend);
+
+      $.post("/api/friends", newFriend)
+        .then(function (data) {
+          console.log("add.html", data);
+          console.log("Adding friend...");
+        });
     });
+
+    //form validation logic
+    function validateForm() {
+      var x = document.forms["survey-form"]["fname"].value;
+      if (x == "") {
+        alert("Name must be filled out");
+        return false;
+        $("#findMatch").attr('style','display: none');
+      }
+    }
+
 
 
 
