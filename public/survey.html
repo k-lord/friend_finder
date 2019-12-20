@@ -39,27 +39,143 @@
     </div>
   </nav>
 
-  <h2 id="header">Agree (or disagree) with the statements below to find someone just like you.</h2>
+  <h3 id="header">Agree (or disagree) with the statements below to find someone just like you.</h3>
 
-  <div class="container">
-    <form name="survey-form" class="needs-validation" method="POST" role="form">
-      <div class="form-group">
-        <input type="text" name="fname" class="form-control w-100" id="userName"
-          placeholder="NAME" required>
-        <div class="invalid-feedback">Please tell us your name.</div>
+
+  <form name="survey-form" class="needs-validation" method="POST" role="form" id="main-form-container">
+    <div class="form-group">
+      <input type="text" name="fname" class="form-control w-100" id="userName" placeholder="NAME" required>
+      <div class="invalid-feedback">Please tell us your name.</div>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control w-100" id="userPic" placeholder="PICTURE URL">
+    </div>
+    <hr><br>
+
+    <div class="survey-container form-group">
+      <div class="row">
+        <div class="col question"><label for="q1"><span class="textQ" id="textQ1">Q1</span></label></div>
       </div>
-      <div class="form-group">
-        <input type="text" class="form-control w-100" id="userPic"
-          placeholder="PICTURE URL">
+      <div class="row">
+        <div class="col disagree">Strongly Disagree</div>
+        <div class="col"><input type="range" class="custom-range w-300" min="1" max="5" step="1" id="q1"></div>
+        <div class="col agree">Strongly Agree</div>
       </div>
-      <hr><br>
+    </div>
+    <hr>
 
-      <div class ="survey-container"></div>
+    <div class="survey-container form-group">
+      <div class="row">
+        <div class="col question"><label for="q2"><span class="textQ" id="textQ2">Q2</span></label></div>
+      </div>
+      <div class="row">
+        <div class="col disagree">Strongly Disagree</div>
+        <div class="col"><input type="range" class="custom-range w-300" min="1" max="5" step="1" id="q2"></div>
+        <div class="col agree">Strongly Agree</div>
+      </div>
+    </div>
+    <hr>
 
-      <button type="submit" id="submit" class="btn btn-dark btn-block" data-toggle="modal" data-target="#findmatch">FIND
-        YOUR MATCH</button>
-    </form>
-  </div>
+    <div class="survey-container form-group">
+      <div class="row">
+        <div class="col question"><label for="q3"><span class="textQ" id="textQ3">Q3</span></label></div>
+      </div>
+      <div class="row">
+        <div class="col disagree">Strongly Disagree</div>
+        <div class="col"><input type="range" class="custom-range w-300" min="1" max="5" step="1" id="q3"></div>
+        <div class="col agree">Strongly Agree</div>
+      </div>
+    </div>
+    <hr>
+
+    <div class="survey-container form-group">
+      <div class="row">
+        <div class="col question"><label for="q4"><span class="textQ" id="textQ4">Q4</span></label></div>
+      </div>
+      <div class="row">
+        <div class="col disagree">Strongly Disagree</div>
+        <div class="col"><input type="range" class="custom-range w-300" min="1" max="5" step="1" id="q4"></div>
+        <div class="col agree">Strongly Agree</div>
+      </div>
+    </div>
+    <hr>
+
+    <div class="survey-container form-group">
+      <div class="row">
+        <div class="col question"><label for="q5"><span class="textQ" id="textQ5">Q5</span></label></div>
+      </div>
+      <div class="row">
+        <div class="col disagree">Strongly Disagree</div>
+        <div class="col"><input type="range" class="custom-range w-300" min="1" max="5" step="1" id="q5"></div>
+        <div class="col agree">Strongly Agree</div>
+      </div>
+    </div>
+    <hr>
+
+    <div class="survey-container form-group">
+      <div class="row">
+        <div class="col question"><label for="q6"><span class="textQ" id="textQ6">Q6</span></label></div>
+      </div>
+      <div class="row">
+        <div class="col disagree">Strongly Disagree</div>
+        <div class="col"><input type="range" class="custom-range w-300" min="1" max="5" step="1" id="q6"></div>
+        <div class="col agree">Strongly Agree</div>
+      </div>
+    </div>
+    <hr>
+
+    <div class="survey-container form-group">
+      <div class="row">
+        <div class="col question"><label for="q7"><span class="textQ" id="textQ7">Q7</span></label></div>
+      </div>
+      <div class="row">
+        <div class="col disagree">Strongly Disagree</div>
+        <div class="col"><input type="range" class="custom-range w-300" min="1" max="5" step="1" id="q7"></div>
+        <div class="col agree">Strongly Agree</div>
+      </div>
+    </div>
+    <hr>
+
+    <div class="survey-container form-group">
+      <div class="row">
+        <div class="col question"><label for="q8"><span class="textQ" id="textQ8">Q8</span></label></div>
+      </div>
+      <div class="row">
+        <div class="col disagree">Strongly Disagree</div>
+        <div class="col"><input type="range" class="custom-range w-300" min="1" max="5" step="1" id="q8"></div>
+        <div class="col agree">Strongly Agree</div>
+      </div>
+    </div>
+    <hr>
+
+    <div class="survey-container form-group">
+      <div class="row">
+        <div class="col question"><label for="q9"><span class="textQ" id="textQ9">Q9</span></label></div>
+      </div>
+      <div class="row">
+        <div class="col disagree">Strongly Disagree</div>
+        <div class="col"><input type="range" class="custom-range w-300" min="1" max="5" step="1" id="q9"></div>
+        <div class="col agree">Strongly Agree</div>
+      </div>
+    </div>
+    <hr>
+
+    <div class="survey-container form-group">
+      <div class="row">
+        <div class="col question"><label for="q10"><span class="textQ" id="textQ10">Q10</span></label></div>
+      </div>
+      <div class="row">
+        <div class="col disagree">Strongly Disagree</div>
+        <div class="col"><input type="range" class="custom-range w-300" min="1" max="5" step="1" id="q10"></div>
+        <div class="col agree">Strongly Agree</div>
+      </div>
+    </div>
+    <hr>
+
+    <button type="submit" id="submit" class="btn btn-dark btn-block" data-toggle="modal" data-target="#findmatch">FIND
+      YOUR MATCH</button>
+  </form>
+
 
   <!-- Modal -->
   <div class="modal fade" id="findmatch" tabindex="-1" role="dialog" aria-labelledby="findmatchTitle"
@@ -93,7 +209,7 @@
 
   <!--Javascript logic-->
   <script type="text/javascript" src="./javascripts/survey.js"></script>
-    
+
 </body>
 
 </html>

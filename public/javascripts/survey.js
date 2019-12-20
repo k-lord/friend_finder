@@ -1,31 +1,55 @@
 var surveyArray = [
     "I'm a morning person.",
-    "I'm very punctual and am always on time.",
-    "Rush Hour 2 is the best movie.",
+    "I'm always punctual and on time.",
+    "I prefer to stay in and chill on a Friday night.",
+    "Rush Hour 2 is my favorite movie.",
     "WCW was better than WWF.",
     "Rootbeer is disgusting.",
     "I only read YA novel series set in a dystopian future.",
+    "Game of Thrones is the best TV show ever made.",
+    "N*SYNC is better than Backstreet Boys.",
+    "I love watching The Bachelor / Bachelorette."
 
 ];
 
+function appendQuestions(arr) {
+  var qNum = 1;
+  for (i = 0; i < arr.length; i++) {
+    var id = "#textQ" + qNum;
+    $(id).text(arr[i]);
+    console.log(qNum + ". " + arr[i]);
+    console.log(id);
+    qNum++;
+  };
+};
+
+appendQuestions(surveyArray);
+
 
 // function to loop through questions array and append questions to the form
+/*
 function showQuestions(arr) {
+  var qNum = 1;
     for (var i = 0; i < arr.length; i++) {
-        var qNum = 1;
         var singleQ = $("<div>");
-        var label = "'<label for q" + qNum + "'><span id='textQ'></span></label><br>";
-        var range = "<span>Strongly Disagree <input type='range' class='custom-range w-50 min='1' max='5' step='1' id=q" + qNum + ">Strongly Agree</span><br><br><hr>"
+        var label = "<label for 'q" + qNum + "'><span id='textQ'></span></label><br>";
+        var range = "<span>Strongly Disagree<input type='range' class='custom-range w-100' min='1' max='5' step='1' id=q" + qNum + ">Strongly Agree</span><br><br><hr>"
         singleQ.addClass("form-group survey");
         $(".survey-container").append(singleQ);
         singleQ.html(label);
         singleQ.html(range);
-        $("#textQ").text(arr[i]);
+        $(".textQ").text(arr[i]);
+        console.log(label);
+        console.log(range);
+        console.log(qNum + ". " + arr[i]);
         qNum++;
+        
     };
 };
 
+
 showQuestions(surveyArray);
+*/
 
 //on click event to create new friend object and POST to API/friends
 $("#submit").on("click", function (event) {

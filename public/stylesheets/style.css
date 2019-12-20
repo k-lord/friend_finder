@@ -27,28 +27,13 @@ a {
 }
 
 #header {
-  padding-top: 20px;
+  color: indianred;
+  padding-top: 50px;
+  padding-bottom:50px;
   text-align: center;
   margin: 0 auto 0 auto;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  margin: 0 auto 0 auto;
-  margin-top: 5%;
-  text-align: center;
-  width: 100%;
-}
-
-label {
-  margin-bottom: 3em;
-}
-
-.survey {
-  margin: 0 auto 0 auto;
-  text-align: center;
-}
 
 input[type=range]::-webkit-slider-thumb {
   background: slategrey;
@@ -61,4 +46,29 @@ input[type=range]::-webkit-slider-thumb {
 #match-pic {
   max-width: 300px;
   max-height: 300px;
+}
+
+.question {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.textQ {
+  font-size: 1.5em;
+  color: teal;
+}
+
+.disagree {
+  text-align: right;
+}
+
+.agree {
+  text-align: left;
+}
+
+#main-form-container {
+  margin: 0 auto 0 auto;
+  width: 90%;
+  margin-bottom: 10px;
 }
