@@ -1,0 +1,16 @@
+DROP DATABASE IF EXISTS friendFinder_DB;
+CREATE DATABASE friendFinder_DB;
+USE friendFINDER_DB;
+
+CREATE TABLE friends (
+	id INTEGER(11) AUTO_INCREMENT NOT NULL,
+    firstName VARCHAR(200) NOT NULL,
+    img VARCHAR(300),
+    results VARCHAR(100),
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE survey (
+	id INTEGER(11) AUTO_INCREMENT NOT NULL,
+    question VARCHAR(300) NOT NULL
+);

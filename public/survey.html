@@ -39,90 +39,22 @@
     </div>
   </nav>
 
-  <h2 id="header">Fill out the survey below to find someone just like you.</h2>
+  <h2 id="header">Agree (or disagree) with the statements below to find someone just like you.</h2>
 
   <div class="container">
     <form name="survey-form" class="needs-validation" method="POST" role="form">
       <div class="form-group">
         <input type="text" name="fname" class="form-control w-100" id="userName"
-          placeholder="What's your name? Enter it here." required>
+          placeholder="NAME" required>
         <div class="invalid-feedback">Please tell us your name.</div>
       </div>
       <div class="form-group">
         <input type="text" class="form-control w-100" id="userPic"
-          placeholder="Here is where you put a link to a picture of you.">
+          placeholder="PICTURE URL">
       </div>
       <hr><br>
-      <div class="form-group survey">
-        <label for="q1">Question 1 Lorem ipsum dolor sit amet consectetur adipisicing elit.</label><br>
-        <span>Strongly Disgree
-          <input type="range" class="custom-range w-50" min="1" max="5" step="1" id="q1">
-          Strongly Agree</span><br><br>
-      </div>
-      <hr>
-      <div class="form-group survey">
-        <label for="q2">Question 2 Lorem ipsum dolor sit amet consectetur adipisicing elit.</label><br>
-        <span>Strongly Disgree
-          <input type="range" class="custom-range w-50" min="1" max="5" step="1" id="q2">
-          Strongly Agree</span><br><br>
-      </div>
-      <hr>
-      <div class="form-group survey">
-        <label for="q3">Question 3 Lorem ipsum dolor sit amet consectetur adipisicing elit.</label><br>
-        <span>Strongly Disgree
-          <input type="range" class="custom-range w-50" min="1" max="5" step="1" id="q3">
-          Strongly Agree</span><br><br>
-      </div>
-      <hr>
-      <div class="form-group survey">
-        <label for="q4">Question 4 Lorem ipsum dolor sit amet consectetur adipisicing elit.</label><br>
-        <span>Strongly Disgree
-          <input type="range" class="custom-range w-50" min="1" max="5" step="1" id="q4">
-          Strongly Agree</span><br><br>
-      </div>
-      <hr>
-      <div class="form-group survey">
-        <label for="q5">Question 5 Lorem ipsum dolor sit amet consectetur adipisicing elit.</label><br>
-        <span>Strongly Disgree
-          <input type="range" class="custom-range w-50" min="1" max="5" step="1" id="q5">
-          Strongly Agree</span><br><br>
-      </div>
-      <hr>
-      <div class="form-group survey">
-        <label for="q6">Question 6 Lorem ipsum dolor sit amet consectetur adipisicing elit.</label><br>
-        <span>Strongly Disgree
-          <input type="range" class="custom-range w-50" min="1" max="5" step="1" id="q6">
-          Strongly Agree</span><br><br>
-      </div>
-      <hr>
-      <div class="form-group survey">
-        <label for="q7">Question 7 Lorem ipsum dolor sit amet consectetur adipisicing elit.</label><br>
-        <span>Strongly Disgree
-          <input type="range" class="custom-range w-50" min="1" max="5" step="1" id="q7">
-          Strongly Agree</span><br><br>
-      </div>
-      <hr>
-      <div class="form-group survey">
-        <label for="q8">Question 8 Lorem ipsum dolor sit amet consectetur adipisicing elit.</label><br>
-        <span>Strongly Disgree
-          <input type="range" class="custom-range w-50" min="1" max="5" step="1" id="q8">
-          Strongly Agree</span><br><br>
-      </div>
-      <hr>
-      <div class="form-group survey">
-        <label for="q9">Question 9 Lorem ipsum dolor sit amet consectetur adipisicing elit.</label><br>
-        <span>Strongly Disgree
-          <input type="range" class="custom-range w-50" min="1" max="5" step="1" id="q9">
-          Strongly Agree</span><br><br>
-      </div>
-      <hr>
-      <div class="form-group survey">
-        <label for="q10">Question 10 Lorem ipsum dolor sit amet consectetur adipisicing elit.</label><br>
-        <span>Strongly Disgree
-          <input type="range" class="custom-range w-50" min="1" max="5" step="1" id="q10">
-          Strongly Agree</span><br><br>
-      </div>
-      <br><br>
+
+      <div class ="survey-container"></div>
 
       <button type="submit" id="submit" class="btn btn-dark btn-block" data-toggle="modal" data-target="#findmatch">FIND
         YOUR MATCH</button>
@@ -160,57 +92,8 @@
 
 
   <!--Javascript logic-->
-  <script>
-    //on click event to create new friend object and POST to API/friends
-    $("#submit").on("click", function (event) {
-      event.preventDefault();
-      validateForm();
-
-      var newFriend = {
-        name: $("#userName").val().trim(),
-        image: $("#userPic").val().trim(),
-        results: [
-          parseInt($("#q1").val()),
-          parseInt($("#q2").val()),
-          parseInt($("#q3").val()),
-          parseInt($("#q4").val()),
-          parseInt($("#q5").val()),
-          parseInt($("#q6").val()),
-          parseInt($("#q7").val()),
-          parseInt($("#q8").val()),
-          parseInt($("#q9").val()),
-          parseInt($("#q10").val()),
-        ],
-        score: 0
-      };
-
-      for (var i = 0; i < newFriend.results.length; i++) {
-        newFriend.score += newFriend.results[i];
-      }
-
-      console.log(newFriend);
-
-      $.post("/api/friends", newFriend)
-        .then(function (data) {
-          console.log("add.html", data);
-          console.log("Adding friend...");
-        });
-    });
-
-    //form validation logic
-    function validateForm() {
-      var x = document.forms["survey-form"]["fname"].value;
-      if (x == "") {
-        alert("Name must be filled out");
-        return false;
-        $("#findMatch").attr('style','display: none');
-      }
-    }
-
-
-
-
-  </script>
+  <script type="text/javascript" src="./javascripts/survey.js"></script>
+    
 </body>
 
 </html>
